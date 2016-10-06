@@ -1,5 +1,7 @@
 obs = importdata('Observations.txt');
 obsArr = [];
+
+% converting the read values to 1 and 2 representing Heads and Tails
 for i=1:size(obs,1)
     str = obs(i);
     str = char(str);
@@ -22,12 +24,14 @@ end
 states = importdata('States.txt');
 statesArr = [];
 
+% reading states from file 
 for i=1:size(states,1)
     str = states(i,:);
     numArr = uint8(str);
     statesArr = [statesArr;numArr];
 end
 
+% estimating transision and emission parameters
 [trans,emis] = hmmestimate(obsArr,statesArr);
 
 transNew = [0.5 0.5;0.5 0.5];
@@ -48,4 +52,3 @@ emisNew = [sumH/600 sumT/600;sumH/600 sumT/600];
 [updatedTrans,updatedEmis] = hmmtrain(obsArr,transNew,emisNew);
 states = [];
 states = hmmviterbi(obsArr,trans,emis);
-
