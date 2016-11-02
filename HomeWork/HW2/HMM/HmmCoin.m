@@ -49,6 +49,8 @@ for i=1:size(obsArr,1)
 end
 emisNew = [sumH/600 sumT/600;sumH/600 sumT/600];
 
-[updatedTrans,updatedEmis] = hmmtrain(obsArr,transNew,emisNew);
+[sequenceNew,statesNew] = hmmgenerate(20,trans,emis);
+
+%[updatedTrans,updatedEmis] = hmmtrain(obsArr,trans,emis);
 states = [];
-states = hmmviterbi(obsArr,trans,emis);
+states = hmmviterbi(obsArr(:,:),trans,emis);
