@@ -1,12 +1,11 @@
 %function [newX] = noisAdded(X,y,eta)
 
-X = testImages;
-
+X = trainImages;
+y = trainLabels;
 load('theta.mat');
 exMat = sign(xderivative(y,theta,X));
-newX = X + (0.5*exMat);
+newX = X + (0.0025*exMat);
 
-y = testLabels;
 X = newX;
 load('theta.mat');
 b = theta(size(theta,1),1);
