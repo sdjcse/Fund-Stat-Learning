@@ -14,7 +14,7 @@ for j = 1:size(y,1)
   end
 end
 
-h = softplus(-1*y.*sigmoid(X*theta + b));
+h = softplus(-1*y.*(X*theta + b));
 
 % Labelling 1 as one class and -1 as the other
 temp = 0;
