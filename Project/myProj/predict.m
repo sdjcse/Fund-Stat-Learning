@@ -1,4 +1,7 @@
+function [] = predict()
 load('theta.mat');
+load('data.mat');
+disp('Predicting the test set without any noise added...');
 
 y = testLabels;
 X = testImages;
@@ -20,5 +23,6 @@ for j=1:size(y,1)
     correct = correct +1;
   end
 end
-
+disp('prediction accuracy without noise: ');
 disp(correct/size(y,1));
+end

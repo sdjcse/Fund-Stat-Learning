@@ -1,3 +1,4 @@
+% cost function defined for the logistic regression function
 function [J] = costFun(theta,X,y,lambda)
 
 m = length(y); % number of training examples
