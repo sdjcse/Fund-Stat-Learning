@@ -17,7 +17,7 @@ disp('This will take approximately 10 minutes');
 [theta,J] = ...
   fminunc(@(t)(costFun(t, X, y)), initial_theta, options);
 disp('Learnt weights from training. Saving weights...');
-save('theta.mat',theta);
+save('theta.mat','theta');
 end
 predict();
 noise();
