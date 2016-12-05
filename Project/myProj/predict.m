@@ -25,4 +25,5 @@ for j=1:size(y,1)
 end
 disp('prediction accuracy without noise: ');
 disp(correct/size(y,1));
+toc;
 end

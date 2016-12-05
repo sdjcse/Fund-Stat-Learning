@@ -1,6 +1,6 @@
 % loading data
 load('data.mat');
-
+tic;
 X = trainImages;
 y = trainLabels;
 disp('Loaded data...');
@@ -19,5 +19,6 @@ disp('This will take approximately 10 minutes');
 disp('Learnt weights from training. Saving weights...');
 save('theta.mat','theta');
 end
+toc;
 predict();
 noise();

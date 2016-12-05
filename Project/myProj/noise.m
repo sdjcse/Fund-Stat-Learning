@@ -48,5 +48,5 @@ for j=1:size(y,1)
 end
 
 fprintf('Accuracy with epsilon value %f the test set: %f \n',epsilon,(correct/size(y,1)));
-
+toc;
 end
